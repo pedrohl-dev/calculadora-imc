@@ -22,6 +22,10 @@ function gerarImc(){
         imcResultado.innerText = 'Seu IMC é: ' + imcArredondado;
     }
 
+    input.addEventListener('input', () => {
+    input.value = input.value.replace(/[.,]/g, '');
+    });
+
     const status = document.getElementById('result')
 
     if (imc<18.5) {
@@ -31,6 +35,6 @@ function gerarImc(){
     } else if (imc>=25.0 && imc<=29.9) {
         status.innerText = ('Você está com Obesidade.');
     } else if (imc>=40.0) {
-        status.innerText = ('Você está com Obrsidade Grave.')
+        status.innerText = ('Você está com Obesidade Grave.')
     }
 }
